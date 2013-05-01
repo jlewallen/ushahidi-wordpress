@@ -30,14 +30,24 @@ else {
  * Wordpress helper class.
  */
 class wordpress_Core {
-        public static function menu($name)
+        public static function menu($name = 'main', $container_id = 'navigation', $menu_id = 'dropmenu')
         {
-		return wp_nav_menu(array('theme_location' => 'main', 'container_id' => 'navigation', 'menu_id' => 'dropmenu'));
+		return wp_nav_menu(array('theme_location' => $name, 'container_id' => $navigation, 'menu_id' => $menu_id));
+	}
+
+	public static function get_header()
+	{
+		 return get_header();
+	}
+
+	public static function get_footer()
+	{
+		 return get_footer();
 	}
 
         public static function template($name)
         {
-		return wp_nav_menu(array('theme_location' => 'main', 'container_id' => 'navigation', 'menu_id' => 'dropmenu'));
+		return "";
 	}
 }
 
